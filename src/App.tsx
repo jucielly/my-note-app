@@ -1,5 +1,7 @@
 import React from 'react';
 import GlobalStyle from './styles/global'
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes'
 
 
 
@@ -7,8 +9,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>olar</h1>
-
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
     </>
   );
 }
