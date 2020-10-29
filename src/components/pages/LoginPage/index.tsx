@@ -1,4 +1,5 @@
 import React from 'react';
+import WelcomeCard from '../../organisms/WelcomeCard'
 
 
 
@@ -6,7 +7,7 @@ import React from 'react';
 function LoginPage() {
   return (
     <>
-   <div>olar</div>
+      <WelcomeCard />
     </>
   );
 }
