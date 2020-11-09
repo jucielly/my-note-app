@@ -25,6 +25,9 @@ justify-content: center;
  width:60%;
 
  h1{
-     
+    font-family: 'Caveat', cursive;
+    font-size: 5em;
+     color: #fff;
+     margin-top: 50px;
  }
 `

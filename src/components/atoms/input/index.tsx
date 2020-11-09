@@ -8,6 +8,7 @@ const Input = styled.input`
  border-radius: 5px;
  padding: 20px;
 width: 400px;
+transition: .3s;
 
 &::placeholder{
   color: #CDC3B7;

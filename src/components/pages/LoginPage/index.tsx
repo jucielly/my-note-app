@@ -21,5 +21,5 @@ const Container = styled.div`
 height: 100vh;
 display: flex;
 align-items: stretch;
-background-color: #F47B7C;
+background: #F47B7C;
 `
