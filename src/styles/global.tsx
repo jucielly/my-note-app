@@ -19,4 +19,8 @@ body {
 button {
     cursor: pointer;
 }
+
+input:focus {
+    outline: none;
+}
 `;

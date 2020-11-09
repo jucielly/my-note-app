@@ -6,8 +6,8 @@ border: none;
 background-color: #CC444B;
 color: #fff;
 border-radius: 5px;
-width: 100px;
-padding: 20px;
+width: 250px;
+padding: 15px;
 `
 
 

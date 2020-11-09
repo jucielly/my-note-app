@@ -4,16 +4,24 @@ import styled from 'styled-components'
 
 
 const Input = styled.input`
- border: 1px solid #918F92;
+ border: 2px solid #DED8D0;
  border-radius: 5px;
- padding: 8px;
-width: 40%;
+ padding: 20px;
+width: 400px;
+
+&::placeholder{
+  color: #CDC3B7;
+}
 
   & + input {
-      margin: 15px;
+      margin: 30px;
+  }
+
+  &:focus{
+    border: 2px solid #CC444B;
   }
 
 `
 
 
-export default Input;
+export default Input; 
