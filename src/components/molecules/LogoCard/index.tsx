@@ -4,13 +4,10 @@ import styled from 'styled-components';
 
 const LogoCard: React.FC = () => {
     return (
-        <>
-            <Container>
-                <h1>My Note App</h1>
-                <Logo />
-            </Container>
-
-        </>
+        <Container>
+            <h1>My Note App</h1>
+            <Logo />
+        </Container>
     );
 }
 
@@ -28,6 +25,6 @@ justify-content: center;
     font-family: 'Caveat', cursive;
     font-size: 5em;
      color: #fff;
-     margin-top: 50px;
+     margin-top: 40px;
  }
 `

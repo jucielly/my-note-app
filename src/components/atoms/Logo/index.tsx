@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginImage from '../../../assets-noteApp/loginImg.png'
 
-const Logo: React.FC = () => <LogoImg src={LoginImage} />
+
+const Logo: React.FC = () => <LogoImg src='assets/loginImg.png' />
 
 export default Logo;
 
