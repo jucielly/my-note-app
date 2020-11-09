@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeCard from '../../organisms/WelcomeCard'
+import LoginCard from '../../organisms/LoginCard'
 
 
 
@@ -7,7 +7,7 @@ import WelcomeCard from '../../organisms/WelcomeCard'
 function LoginPage() {
   return (
     <>
-      <WelcomeCard />
+      <LoginCard />
     </>
   );
 }
