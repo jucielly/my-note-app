@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import LoginCard from '../../organisms/LoginCard';
-import LogoCard from '../../organisms/LogoCard'
+import LogoCard from '../../molecules/LogoCard'
 
 
 

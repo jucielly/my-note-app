@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../molecules/Logo'
+import Logo from '../../atoms/Logo'
 import styled from 'styled-components';
 
 const LogoCard: React.FC = () => {
