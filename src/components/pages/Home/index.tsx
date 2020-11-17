@@ -1,14 +1,15 @@
 import React from 'react';
+import LoginCard from '../../organisms/LoginCard'
 
 
 
 
-function Home() {
+function LoginPage() {
   return (
     <>
-      <div>oi</div>
+      <LoginCard />
     </>
   );
 }
 
-export default Home;
+export default LoginPage;

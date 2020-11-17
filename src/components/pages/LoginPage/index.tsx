@@ -1,14 +1,25 @@
 import React from 'react';
+import styled from 'styled-components'
+import LoginCard from '../../organisms/LoginCard';
+import LogoCard from '../../molecules/LogoCard'
 
 
 
 
-function LoginPage() {
+const Home: React.FC = () => {
   return (
-    <>
-   <div>olar</div>
-    </>
+    <Container>
+      <LogoCard />
+      <LoginCard />
+    </Container>
   );
 }
 
-export default LoginPage;
+export default Home;
+
+const Container = styled.div`
+height: 100vh;
+display: flex;
+align-items: stretch;
+background: #F47B7C;
+`
