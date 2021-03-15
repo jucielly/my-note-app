@@ -4,17 +4,17 @@ import { lighten } from 'polished'
 
 const GoogleLoginButton = styled(Button)`
 margin: 25px;
-  background-color: #918F92;
+  background-color: ${props => props.theme.colors.terciary};
   padding: 15px;
 
   &:hover{
-   background-color: ${lighten(0.2, '#918F92')};
+   background-color: ${props => lighten(0.2, props.theme.colors.terciary)}
   }
-  color: #070610;
+  color: ${props => props.theme.colors.fontColor};
 
 .fa-google{
  margin-right: 10px;
- color: #fff;
+ color: ${props => props.theme.colors.defaultWhite};
 }
  
 

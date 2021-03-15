@@ -7,7 +7,7 @@ import LoginCard from '../../organisms/LoginCard'
 function LoginPage() {
   return (
     <>
-      <LoginCard />
+
     </>
   );
 }
