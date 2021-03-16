@@ -12,7 +12,7 @@ const NavigationOptions: React.FC = () => {
 
                 <div><i className="fas fa-bars fa-3x"></i></div>
                 <div className="note-title"><NoteLogo /> My Note App</div>
-                <div><Input placeholder="PESQUISAR" type="password" /><i className="fas fa-search"></i></div>
+                <div className="wrapper"><Input placeholder="PESQUISAR" type="text" /><i className="fas fa-search"></i></div>
                 <div><i className="fas fa-user-circle fa-4x"></i></div>
 
             </Nav>
@@ -45,4 +45,23 @@ align-items: center;
 .fa-bars {
     color: ${props => props.theme.colors.terciary};
 }
+
+
+.wrapper  {
+   i {
+    position: absolute; 
+    left: 1040px; 
+    top: 40px; 
+    color: ${props => props.theme.colors.terciary}; 
+   }
+
+   i:hover {
+       cursor: pointer
+   }
+
+   
+}
+
+
+
 `

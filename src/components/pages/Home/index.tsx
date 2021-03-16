@@ -1,4 +1,5 @@
 import React from 'react';
+import NoteCard from '../../atoms/NoteCard';
 import Navigation from '../../organisms/Navigation';
 
 
@@ -6,12 +7,13 @@ import Navigation from '../../organisms/Navigation';
 
 
 
-function LoginPage() {
+function Home() {
   return (
     <>
-       <Navigation/>
+      <Navigation />
+      <NoteCard />
     </>
   );
 }
 
-export default LoginPage;
+export default Home;
