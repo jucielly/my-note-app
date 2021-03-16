@@ -30,4 +30,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+ul {
+    list-style-type: none;
+}
 `;

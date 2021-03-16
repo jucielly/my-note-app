@@ -1,5 +1,7 @@
 import React from 'react';
-import LoginCard from '../../organisms/LoginCard'
+import Navigation from '../../organisms/Navigation';
+
+
 
 
 
@@ -7,7 +9,7 @@ import LoginCard from '../../organisms/LoginCard'
 function LoginPage() {
   return (
     <>
-
+       <Navigation/>
     </>
   );
 }

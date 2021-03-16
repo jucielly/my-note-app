@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 const Navbar = styled.div`
  display: flex;
-flex-direction:column;
  align-items: center;
- width: 40%;
- background-color: #fff;
- border-radius: 20px 0px 0px 20px;
- box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+ width: 100%;
+ padding: 1em;
+ background-color:${props => props.theme.colors.defaultWhite};
+ border-radius: 0px 0px 20px 20px;
+ box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
 `
 
 export default Navbar
