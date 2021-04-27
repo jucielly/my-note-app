@@ -1,15 +1,21 @@
 import React from 'react';
-import LoginCard from '../../organisms/LoginCard'
+import NoteCard from '../../atoms/NoteCard';
+import Navigation from '../../organisms/Navigation';
+import Fab from '../../atoms/Fab'
 
 
 
 
-function LoginPage() {
+
+
+function Home() {
   return (
     <>
-      <LoginCard />
+      <Navigation />
+      <NoteCard />
+      <Fab><i className="fas fa-plus"></i></Fab>
     </>
   );
 }
 
-export default LoginPage;
+export default Home;
