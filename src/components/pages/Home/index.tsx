@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteCard from '../../atoms/NoteCard';
 import Navigation from '../../organisms/Navigation';
+import Fab from '../../atoms/Fab'
 
 
 
@@ -12,6 +13,7 @@ function Home() {
     <>
       <Navigation />
       <NoteCard />
+      <Fab><i className="fas fa-plus"></i></Fab>
     </>
   );
 }
