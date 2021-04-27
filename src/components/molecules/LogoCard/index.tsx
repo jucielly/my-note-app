@@ -24,7 +24,7 @@ justify-content: center;
  h1{
     font-family: 'Caveat', cursive;
     font-size: 5em;
-     color: #fff;
+     color: ${props => props.theme.colors.defaultWhite};
      margin-top: 40px;
  }
 `
