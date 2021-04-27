@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { Overlay, Modal, Container } from './style'
 
 
@@ -9,7 +9,7 @@ interface ModalProps {
 }
 
 
-const BaseModal: React.FC<ModalProps> = ({ open, onClose }: ModalProps) => {
+const BaseModal: React.FC<ModalProps> = ({ open, onClose, children }) => {
 
     return (
         <>
@@ -18,6 +18,7 @@ const BaseModal: React.FC<ModalProps> = ({ open, onClose }: ModalProps) => {
                 <Container>
                     <button className="close-btn" onClick={onClose}>&times;</button>
                 </Container>
+                {children}
             </Modal>
 
         </>
