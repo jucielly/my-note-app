@@ -3,16 +3,12 @@ import NoteCard from '../../atoms/NoteCard';
 import Navigation from '../../organisms/Navigation';
 import Fab from '../../atoms/Fab'
 import AddNoteModal from '../../organisms/AddNoteModal';
+import addNote from '../../../services/addNote'
 
 
-
-
-
-
-
-function Home() {
+const Home: React.FC = () => {
   const [open, setOpen] = useState(false)
-  
+
 
   const handleOpenModal = () => {
     setOpen(true)
@@ -23,7 +19,10 @@ function Home() {
   }
 
   const handleAddNote = (noteValue: string) => {
-    console.log(noteValue)
+    const note = {
+      noteValue,
+    }
+    addNote(note)
     handleCloseModal()
   }
   return (
