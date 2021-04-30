@@ -1,14 +1,11 @@
 import { ADD_NOTE_ACTION } from './consts'
-
-interface Action {
-    type: string;
-    payload: object;
-}
-
-const initialState: [] = []
+import {NewNoteAction,Note,NotesActionsTypes,NotesState} from './types'
 
 
-export const noteReducer = (state = initialState, action: Action) => {
+const initialState: NotesState = []
+
+
+export const noteReducer = (state = initialState, action: NotesActionsTypes) => {
     switch (action.type) {
         case ADD_NOTE_ACTION:
             return [

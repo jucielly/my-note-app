@@ -3,6 +3,9 @@ import { noteReducer } from './notes/reducer'
 
 
 
+
 export const reducers = combineReducers({
-    note: noteReducer
+    notes: noteReducer
 })
+
+export type RootState = ReturnType<typeof reducers>  

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import NoteCard from '../../atoms/NoteCard';
 import Navigation from '../../organisms/Navigation';
 import Fab from '../../atoms/Fab'
 import AddNoteModal from '../../organisms/AddNoteModal';
 import addNote from '../../../services/addNote'
 import { addNote as addNoteAction } from '../../../store/notes/actions'
 import { useDispatch } from 'react-redux'
+import Note from '../../molecules/Note';
+import NoteList from '../../organisms/NoteList';
 
 
 const Home: React.FC = () => {
@@ -32,8 +33,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Navigation />
-      <NoteCard />
-      <Fab onClick={handleOpenModal}><i className="fas fa-plus"></i></Fab>
+      <NoteList />
+      <Fab onClick={handleOpenModal} fixed><i className="fas fa-plus" ></i></Fab>
       <AddNoteModal onClose={handleCloseModal} open={open} onAddNote={handleAddNote} />
     </>
   );
