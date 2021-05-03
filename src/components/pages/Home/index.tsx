@@ -1,19 +1,41 @@
-import React from 'react';
-import NoteCard from '../../atoms/NoteCard';
+import React, { useState } from 'react';
 import Navigation from '../../organisms/Navigation';
 import Fab from '../../atoms/Fab'
+import AddNoteModal from '../../organisms/AddNoteModal';
+import addNote from '../../../services/addNote'
+import { addNote as addNoteAction } from '../../../store/notes/actions'
+import { useDispatch } from 'react-redux'
+import Note from '../../molecules/Note';
+import NoteList from '../../organisms/NoteList';
 
 
+const Home: React.FC = () => {
+  const [open, setOpen] = useState(false)
+  const dispatch = useDispatch()
 
 
+  const handleOpenModal = () => {
+    setOpen(true)
+  }
 
+  const handleCloseModal = () => {
+    setOpen(false)
+  }
 
-function Home() {
+  const handleAddNote = (noteValue: string) => {
+    const note = {
+      noteValue,
+    }
+    dispatch(addNoteAction(noteValue))
+    addNote(note)
+    handleCloseModal()
+  }
   return (
     <>
       <Navigation />
-      <NoteCard />
-      <Fab><i className="fas fa-plus"></i></Fab>
+      <NoteList />
+      <Fab onClick={handleOpenModal} fixed><i className="fas fa-plus" ></i></Fab>
+      <AddNoteModal onClose={handleCloseModal} open={open} onAddNote={handleAddNote} />
     </>
   );
 }

@@ -1,0 +1,1 @@
+export const ADD_NOTE_ACTION = 'note/add'
