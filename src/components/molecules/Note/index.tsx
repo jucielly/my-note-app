@@ -1,0 +1,66 @@
+import React from 'react';
+import styled from 'styled-components'
+import BaseCard from '../../atoms/BaseCard';
+
+interface NoteProps {
+    noteValue: string
+}
+
+const Note: React.FC<NoteProps> = ({ noteValue }) => {
+    return (
+        <NoteCard>
+            <h2>title</h2>
+            <span>{noteValue}</span>
+
+        </NoteCard>
+    )
+}
+
+export default Note
+
+const NoteCard = styled(BaseCard)`
+ background-color: ${props => props.theme.cardColors.orangeYellow};
+   margin: 20px;
+   width: 15%;
+   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
+   border-radius: 5px;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px;
+  
+  h2 {
+      border-bottom: 1px solid #333;
+      width: 60%;
+      text-align: center;
+      margin: 10px;
+  }
+
+  span {
+      margin: 10px;
+      word-break: break-all
+  }
+
+   &:hover {
+       cursor: pointer;
+       animation: bounce 0.5s linear;
+   }
+
+   @keyframes bounce {
+	20% {
+			transform: translateY(-6px);
+	}
+	40% {
+			transform: translateY(0px);
+	}
+
+	80% {
+			transform: translateY(-2px);
+	}
+	100% {
+			transform: translateY(0);
+	}
+}
+  
+
+`
