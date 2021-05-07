@@ -20,8 +20,7 @@ export default Note
 
 const NoteCard = styled(BaseCard)`
  background-color: ${props => props.theme.cardColors.orangeYellow};
-   margin: 20px;
-   width: 15%;
+   margin: 15px;
    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
    border-radius: 5px;
    display: flex;
