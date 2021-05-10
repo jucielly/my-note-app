@@ -2,21 +2,24 @@ import React from 'react';
 import styled from 'styled-components'
 import LogoCard from '../../molecules/LogoCard'
 
+
 interface TemplateProps {
     title: string
 }
 
 
 const NoteAppTemplate: React.FC<TemplateProps> = ({ children, title }) => {
+
+
     return (
         <Container>
             <LogoCard />
             <Card>
                 <h2>{title}</h2>
-
                 {children}
             </Card>
-        </Container>
+
+        </Container >
     );
 }
 
@@ -39,15 +42,15 @@ flex-direction:column;
  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
 
  h2 {
-    font-family: 'Caveat', cursive;
+     font-family: 'Caveat', cursive;
     color: ${props => props.theme.colors.primary};
      font-size: 3em;
      margin: 40px;
- 
+
  }
 
  span{
-     position: absolute;
+                    position: absolute;
      margin-top: 600px;
  }
 `
