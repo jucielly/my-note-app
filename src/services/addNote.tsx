@@ -1,7 +1,8 @@
+import { Note } from "../store/notes/types"
 
 
 
-const addNote = (note: any) => {
+const addNote = (note: Note) => {
     const stringifiedNotes = localStorage.getItem("note")
     let notes = JSON.parse(stringifiedNotes || '[]')
     if (!Array.isArray(notes)){

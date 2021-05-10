@@ -21,13 +21,12 @@ export default Note
 
 const NoteCard = styled(BaseCard)`
  background-color: ${props => props.theme.cardColors.orangeYellow};
-   margin: 15px;
+   width: 100%;
    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
    border-radius: 5px;
    display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6px;
   
   .title {
       font-weight: bold;

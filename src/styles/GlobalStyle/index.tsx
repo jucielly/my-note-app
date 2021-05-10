@@ -37,20 +37,21 @@ input[type=number] {
 ul {
     list-style-type: none;
 }
-.my-masonry-grid {
+.notes-masonry-grid {
+  margin: 15px;
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -15px; /* gutter size offset */
+  margin-left: 0; /* gutter size offset */
   width: auto;
 }
-.my-masonry-grid_column {
+.notes-masonry-grid_column {
   padding-left: 15px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+.notes-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 15px;
 }
 `;

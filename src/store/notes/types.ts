@@ -1,6 +1,6 @@
 
 export interface Note {
-    note: string
+    content: string
     title: string
 }
 
