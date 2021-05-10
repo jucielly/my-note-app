@@ -22,11 +22,12 @@ const Home: React.FC = () => {
     setOpen(false)
   }
 
-  const handleAddNote = (noteValue: string) => {
+  const handleAddNote = (content: string, title: string) => {
     const note = {
-      noteValue,
+      content,
+      title
     }
-    dispatch(addNoteAction(noteValue))
+    dispatch(addNoteAction(content,title))
     addNote(note)
     handleCloseModal()
   }
