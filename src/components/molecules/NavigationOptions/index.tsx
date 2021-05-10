@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav } from './style'
 import NoteLogo from '../../atoms/NoteLogo';
 import Input from "../../atoms/input"
-import HamburguerMenu from '../../atoms/HamburgerMenu/HamburgerMenu';
+import HamburguerMenu from '../HamburgerMenu/HamburgerMenu';
 
 
 

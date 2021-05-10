@@ -18,16 +18,16 @@ const NoteList: React.FC = () => {
 
     const notes = useSelector((state: RootState) => state.notes)
     return (
-        <Container>
+  
             <Masonry
                 breakpointCols={breakpointColumnsObj}
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column">
+                className="notes-masonry-grid"
+                columnClassName="notes-masonry-grid_column">
 
-                {notes.map((note, key) => <Note noteValue={note.note} key={key} />)}
+                {notes.map((note, key) => <Note noteValue={note.content} key={key} title={note.title} />)}
 
             </Masonry>
-        </Container>
+ 
 
 
     )
@@ -36,9 +36,3 @@ const NoteList: React.FC = () => {
 
 export default NoteList
 
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: stretch;
-`

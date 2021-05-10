@@ -1,4 +1,4 @@
-import React, {useState, useEffect}from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Button from '../../atoms/Button'
 import BaseModal from '../../molecules/BaseModal'
@@ -8,8 +8,8 @@ import { darken } from 'polished'
 interface AddNoteProps {
     open: boolean;
     onClose: () => void;
-    onAddNote: (note:string) => void;
-   
+    onAddNote: (note: string, title: string) => void;
+
 }
 
 
@@ -17,23 +17,30 @@ interface AddNoteProps {
 
 const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
     const [noteValue, setNoteValue] = useState('')
+    const [title, setTitle] = useState('')
 
-    const handleOnNoteChange:React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-      setNoteValue(event.target.value)
+    const handleOnNoteChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+        setNoteValue(event.target.value)
+    }
+
+    const handleOnTitleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+        setTitle(event.target.value)
     }
 
     const handleAddNote = () => {
-        onAddNote(noteValue)
+        onAddNote(noteValue, title)
     }
 
-    useEffect(()=>{
-        if(open){
+    useEffect(() => {
+        if (open) {
             setNoteValue('')
+            setTitle('')
         }
-    },[open])
+    }, [open])
     return (
         <BaseModal open={open} onClose={onClose}>
-            <Textarea placeholder="Nota..." onChange={handleOnNoteChange} value={noteValue}></Textarea>
+            <Textarea placeholder="Título..." value={title} onChange={handleOnTitleChange}/>
+            <Textarea placeholder="Nota..." onChange={handleOnNoteChange} value={noteValue} />
             <AddNoteButton onClick={handleAddNote}>adicionar nota</AddNoteButton>
 
         </BaseModal>)
@@ -44,8 +51,7 @@ export default AddNoteModal
 
 const Textarea = styled.textarea`
  width: 580px;
- height: 150px;
-margin: 15px;
+ padding: 5px;
 border: none;
 font-size: 1.5em;
 resize: none;
