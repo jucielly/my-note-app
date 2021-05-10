@@ -24,7 +24,7 @@ const NoteList: React.FC = () => {
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column">
 
-                {notes.map((note, key) => <Note noteValue={note.note} key={key} />)}
+                {notes.map((note, key) => <Note noteValue={note.note} key={key} title={note.title} />)}
 
             </Masonry>
         </Container>

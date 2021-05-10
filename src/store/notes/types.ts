@@ -1,6 +1,7 @@
 
 export interface Note {
     note: string
+    title: string
 }
 
 export interface NewNoteAction {

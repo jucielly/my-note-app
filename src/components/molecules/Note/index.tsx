@@ -4,12 +4,13 @@ import BaseCard from '../../atoms/BaseCard';
 
 interface NoteProps {
     noteValue: string
+    title: string
 }
 
-const Note: React.FC<NoteProps> = ({ noteValue }) => {
+const Note: React.FC<NoteProps> = ({ noteValue, title }) => {
     return (
         <NoteCard>
-            <h2>title</h2>
+            <span className="title">{title}</span>
             <span>{noteValue}</span>
 
         </NoteCard>
@@ -28,7 +29,8 @@ const NoteCard = styled(BaseCard)`
   align-items: center;
   padding: 6px;
   
-  h2 {
+  .title {
+      font-weight: bold;
       border-bottom: 1px solid #333;
       width: 60%;
       text-align: center;
