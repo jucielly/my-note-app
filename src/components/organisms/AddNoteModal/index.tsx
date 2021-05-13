@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import Button from '../../atoms/Button'
 import BaseModal from '../../molecules/BaseModal'
 import { darken } from 'polished'
+import { Note } from '../../../store/notes/types'
 
 
 interface AddNoteProps {
     open: boolean;
     onClose: () => void;
-    onAddNote: (note: string, title: string) => void;
+    onAddNote: (note: Note) => void;
 
 }
 
@@ -16,11 +17,11 @@ interface AddNoteProps {
 
 
 const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
-    const [noteValue, setNoteValue] = useState('')
+    const [content, setContent] = useState('')
     const [title, setTitle] = useState('')
 
     const handleOnNoteChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-        setNoteValue(event.target.value)
+        setContent(event.target.value)
     }
 
     const handleOnTitleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
@@ -28,19 +29,19 @@ const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
     }
 
     const handleAddNote = () => {
-        onAddNote(noteValue, title)
+        onAddNote({content, title})
     }
 
     useEffect(() => {
         if (open) {
-            setNoteValue('')
+            setContent('')
             setTitle('')
         }
     }, [open])
     return (
         <BaseModal open={open} onClose={onClose}>
             <Textarea placeholder="Título..." value={title} onChange={handleOnTitleChange}/>
-            <Textarea placeholder="Nota..." onChange={handleOnNoteChange} value={noteValue} />
+            <Textarea placeholder="Nota..." onChange={handleOnNoteChange} value={content} />
             <AddNoteButton onClick={handleAddNote}>adicionar nota</AddNoteButton>
 
         </BaseModal>)
