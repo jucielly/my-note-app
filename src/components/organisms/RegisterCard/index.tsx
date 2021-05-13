@@ -6,9 +6,10 @@ import NoteAppTemplate from '../../templates/NoteAppTemplate'
 
 const LoginCard: React.FC = () => {
     return (
-        <NoteAppTemplate title="Login">
-            <LoginForm btnName="Login" />
-            <span>Não tem Conta? <Link to="/register">registre-se</Link></span>
+
+        <NoteAppTemplate title="Registrar">
+            <LoginForm btnName="Registrar" />
+            <span>Já tem uma conta? <Link to="/login">login</Link></span>
         </NoteAppTemplate>
 
 
