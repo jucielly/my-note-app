@@ -1,6 +1,7 @@
 import { LocalStorageService } from './localStorage'
 import { Note } from '../store/notes/types'
 import { StringService } from './string'
+import { isJSDocReturnTag } from 'typescript'
 
 const NOTES_KEY = 'note'
 
@@ -23,5 +24,12 @@ export class NoteService {
             return []
         }
         return notes
+    }
+
+    static searchNote(search: string) {
+        const notes = this.getAllNotes()
+         return  notes.filter(note => {
+            return note.title.toUpperCase().indexOf(search.toUpperCase()) === 0
+        })
     }
 }

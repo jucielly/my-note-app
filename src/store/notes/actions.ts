@@ -15,4 +15,13 @@ export const fetchAllNotes = () => {
         payload: notes
     })
 
+    
+}
+
+export const searchAllNotes = (search: string) => {
+     const searchedNotes = NoteService.searchNote(search)
+     return({
+         type: SET_NOTES_ACTION,
+         payload: searchedNotes
+     })
 }
