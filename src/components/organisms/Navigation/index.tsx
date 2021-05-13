@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState}from 'react';
 import Navbar from '../../atoms/Navbar';
 import NavigationOptions from '../../molecules/NavigationOptions';
 
@@ -6,11 +6,21 @@ import NavigationOptions from '../../molecules/NavigationOptions';
 
 
 
-function Navigation() {
+const Navigation: React.FC =() => {
+   const [search, setSearch] = useState('')
+
+   const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setSearch(event.target.value)
+}
+
+const handleSearchNote = () =>{
+    console.log(search)
+}
+
     return (
         <>
             <Navbar>
-                <NavigationOptions />
+                <NavigationOptions  search={search} onChange={handleSearchChange} onClick={handleSearchNote}/>
             </Navbar>
         </>
     );
