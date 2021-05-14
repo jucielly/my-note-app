@@ -1,26 +1,31 @@
-import React, {useState}from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../atoms/Navbar';
 import NavigationOptions from '../../molecules/NavigationOptions';
+import { useDispatch } from 'react-redux'
+import { searchAllNotes } from '../../../store/notes/actions'
 
 
 
 
+const Navigation: React.FC = () => {
+    const [search, setSearch] = useState('')
+    const dispatch = useDispatch()
 
-const Navigation: React.FC =() => {
-   const [search, setSearch] = useState('')
+    const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+        setSearch(event.target.value)
+    }
+    const handleSearchNote = () => {
+        dispatch(searchAllNotes(search))
+    }
 
-   const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setSearch(event.target.value)
-}
-
-const handleSearchNote = () =>{
-    console.log(search)
-}
+    useEffect(() => {
+        setSearch('')
+    }, [])
 
     return (
         <>
             <Navbar>
-                <NavigationOptions  search={search} onChange={handleSearchChange} onClick={handleSearchNote}/>
+                <NavigationOptions search={search} onChange={handleSearchChange} onClick={handleSearchNote} />
             </Navbar>
         </>
     );

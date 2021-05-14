@@ -5,13 +5,13 @@ import Input from "../../atoms/input"
 import HamburguerMenu from '../HamburgerMenu/HamburgerMenu';
 import Button from '../../atoms/Button'
 
-interface NavigationProps {
+interface NavigationOptionsProps {
     search: string,
     onChange: (event: any) => void,
     onClick: () => void
 }
 
-const NavigationOptions: React.FC<NavigationProps> = ({ search, onChange, onClick }) => {
+const NavigationOptions: React.FC<NavigationOptionsProps> = ({ search, onChange, onClick }) => {
 
     return (
         <>

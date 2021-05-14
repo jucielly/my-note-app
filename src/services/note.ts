@@ -29,7 +29,7 @@ export class NoteService {
     static searchNote(search: string) {
         const notes = this.getAllNotes()
          return  notes.filter(note => {
-            return note.title.toUpperCase().indexOf(search.toUpperCase()) === 0
+            return note.title.toUpperCase().includes(search.toUpperCase())
         })
     }
 }
