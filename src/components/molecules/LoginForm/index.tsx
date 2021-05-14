@@ -4,13 +4,18 @@ import Button from '../../atoms/Button'
 import styled from 'styled-components'
 import  GoogleLoginButton from '../../../containers/GoogleLoginButton'
 
-const LoginForm: React.FC = () => {
+interface LoginFormProps {
+    btnName: string
+}
+
+
+const LoginForm: React.FC<LoginFormProps> = ({btnName}) => {
     return (
         <>
             <Form>
                 <Input placeholder="EMAIL" type="email" />
                 <Input placeholder="SENHA" type="password" />
-                <Button type="submit">Login</Button>
+                <Button type="submit">{btnName}</Button>
                 <GoogleLoginButton/>
             </Form>
 

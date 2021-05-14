@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import Navigation from '../../organisms/Navigation';
 import Fab from '../../atoms/Fab'
 import AddNoteModal from '../../organisms/AddNoteModal';
-import addNote from '../../../services/addNote'
-import { addNote as addNoteAction } from '../../../store/notes/actions'
+import { addNote as addNoteAction,fetchAllNotes,searchAllNotes } from '../../../store/notes/actions'
 import { useDispatch } from 'react-redux'
-import Note from '../../molecules/Note';
 import NoteList from '../../organisms/NoteList';
+import { Note } from '../../../store/notes/types';
+
 
 
 const Home: React.FC = () => {
@@ -22,18 +22,17 @@ const Home: React.FC = () => {
     setOpen(false)
   }
 
-  const handleAddNote = (content: string, title: string) => {
-    const note = {
-      content,
-      title
-    }
-    dispatch(addNoteAction(content,title))
-    addNote(note)
+  const handleAddNote = (note: Note) => {
+    dispatch(addNoteAction(note))
     handleCloseModal()
   }
+
+  useEffect(()=>{
+    dispatch(fetchAllNotes())
+  },[])
   return (
     <>
-      <Navigation />
+      <Navigation/>
       <NoteList />
       <Fab onClick={handleOpenModal} fixed><i className="fas fa-plus" ></i></Fab>
       <AddNoteModal onClose={handleCloseModal} open={open} onAddNote={handleAddNote} />
