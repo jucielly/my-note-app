@@ -19,6 +19,7 @@ const animateModal = (opacity = 1) => ({ open }: AnimateProps) => {
 }
 
 export const Modal = styled(BaseCard)`
+padding: 10px;
 flex-direction: column;
 align-items: center;
 position: fixed;
@@ -29,7 +30,7 @@ right: 0;
 margin: auto;
 width: 600px;
 z-index: 900;
-  height: 200px;
+  height: 350px;
   ${animateModal(1)}
 
 `
