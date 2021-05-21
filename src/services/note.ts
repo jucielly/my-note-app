@@ -26,6 +26,21 @@ export class NoteService {
         return notes
     }
 
+    static deleteNote(noteId: string) {
+        const notes = this.getAllNotes();
+        const noteIndex = notes.findIndex((note) => note.id === noteId)
+        notes.splice(noteIndex, 1)
+        LocalStorageService.setValue(NOTES_KEY, notes)
+    }
+
+    static updateNote(note: Note) {
+        const notes = this.getAllNotes();
+        const noteIndex = notes.findIndex((currentNote) => note.id === currentNote.id)
+        notes[noteIndex] = note
+        LocalStorageService.setValue(NOTES_KEY, notes)
+    }
+
+
     static searchNote(search: string) {
         const notes = this.getAllNotes()
         return notes.filter(note => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import BaseCard from '../../atoms/BaseCard';
-
+import { lighten } from 'polished'
 
 
 export const NoteCard = styled(BaseCard)`
@@ -37,6 +37,12 @@ background-color: ${props => props.theme.cardColors.orangeYellow};
      position:absolute;
      margin: 10px;
      right: 15px;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        color: ${props => lighten(0.2, props.theme.colors.danger)}
+      }
  }
 
   @keyframes bounce {
