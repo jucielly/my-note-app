@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
-import BaseCard from '../../atoms/BaseCard';
-
+import { NoteCard } from './style'
 interface NoteProps {
     noteValue: string
     title: string
@@ -9,9 +7,10 @@ interface NoteProps {
 
 const Note: React.FC<NoteProps> = ({ noteValue, title }) => {
     return (
-        <NoteCard>
-            <span className="title">{title}</span>
-            <span>{noteValue}</span>
+        <NoteCard> 
+            <i className="fas fa-trash-alt"></i>  
+            <h4 className="title">{title}</h4>
+            <p>{noteValue}</p>
 
         </NoteCard>
     )
@@ -19,48 +18,4 @@ const Note: React.FC<NoteProps> = ({ noteValue, title }) => {
 
 export default Note
 
-const NoteCard = styled(BaseCard)`
- background-color: ${props => props.theme.cardColors.orangeYellow};
-   width: 100%;
-   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 20px;
-   border-radius: 5px;
-   display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  .title {
-      font-weight: bold;
-      border-bottom: 1px solid #333;
-      width: 60%;
-      text-align: center;
-      margin: 10px;
-  }
 
-  span {
-      margin: 10px;
-      word-break: break-all
-  }
-
-   &:hover {
-       cursor: pointer;
-       animation: bounce 0.5s linear;
-   }
-
-   @keyframes bounce {
-	20% {
-			transform: translateY(-6px);
-	}
-	40% {
-			transform: translateY(0px);
-	}
-
-	80% {
-			transform: translateY(-2px);
-	}
-	100% {
-			transform: translateY(0);
-	}
-}
-  
-
-`
