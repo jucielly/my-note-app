@@ -27,20 +27,6 @@ align-items: center;
 }
 
 
-.wrapper  {
-   i {
-    position: absolute; 
-    left: 1040px; 
-    top: 40px; 
-    color: ${props => props.theme.colors.terciary}; 
-   }
-
-   i:hover {
-       cursor: pointer
-   }
-
-   
-}
 
 `
 

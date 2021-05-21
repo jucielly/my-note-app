@@ -24,12 +24,12 @@ const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
         setContent(event.target.value)
     }
 
-    const handleOnTitleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    const handleOnTitleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
         setTitle(event.target.value)
     }
 
     const handleAddNote = () => {
-        onAddNote({content, title})
+        onAddNote({ content, title })
     }
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
     }, [open])
     return (
         <BaseModal open={open} onClose={onClose}>
-            <Textarea placeholder="Título..." value={title} onChange={handleOnTitleChange}/>
+            <Input placeholder="Título..." value={title} onChange={handleOnTitleChange} />
             <Textarea placeholder="Nota..." onChange={handleOnNoteChange} value={content} />
             <AddNoteButton onClick={handleAddNote}>adicionar nota</AddNoteButton>
 
@@ -50,13 +50,27 @@ const AddNoteModal: React.FC<AddNoteProps> = ({ open, onClose, onAddNote }) => {
 
 export default AddNoteModal
 
-const Textarea = styled.textarea`
- width: 580px;
- padding: 5px;
+const Input = styled.input`
+  width: 100%;
+ padding: 15px 5px 5px 5px;
 border: none;
 font-size: 1.5em;
 resize: none;
- 
+
+&:focus {
+    outline: none
+}
+ `
+
+
+const Textarea = styled.textarea`
+ width: 100%;
+ padding: 10px;
+border: none;
+font-size: 1.5em;
+resize: none;
+flex-grow: 1;
+
 &:focus {
     outline: none
 }
